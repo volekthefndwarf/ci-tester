@@ -1,3 +1,4 @@
 {
   "cmd": "curl -L https://get.pulumi.com/ | bash -s && export PATH=$PATH:$HOME/.pulumi/bin && npm install && npm run test "
+  "clearTmp": false
 }
