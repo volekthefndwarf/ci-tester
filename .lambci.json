@@ -1,3 +1,4 @@
 {
-  "cmd": "curl -fsSL https://get.pulumi.com | sh && SET PATH=$PATH:/tmp/lambci/home/.pulumi/bin && npm install && npm run test"
+  "cmd": "curl -fsSL https://get.pulumi.com | sh && " +
+         "export PATH=$PATH:/tmp/lambci/home/.pulumi/bin && npm install && npm run test"
 }
