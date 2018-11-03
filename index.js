@@ -1,7 +1,7 @@
 const cloud = require("@pulumi/cloud");
 const express = require("express"); 
 const bodyParser = require("body-parser"); 
-const echoHandler = require("api/echo").echo; 
+const echoHandler = require("./api/echo").echo; 
 
 let server = new cloud.HttpServer("echo-app", () => {
     const app = express();
@@ -17,4 +17,6 @@ let server = new cloud.HttpServer("echo-app", () => {
 });
 
 // Publish
-export let url = server.url;
+module.exports = {
+  url: server.url
+}; 

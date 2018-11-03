@@ -8,5 +8,6 @@ function echo(req, res) {
 }
 
 module.exports = {
-   echo
+   echo: echo
+
 }; 
