@@ -15,9 +15,8 @@ describe("Echo Router", () => {
 
     echoHandler(mockRequest, mockResponse);
     const actualResponseBody = mockResponse._getData();
-    const expectedResponseBody = "echo bob";
-
-    assert(actualResponseBody, expectedResponseBody);
+    const expectedResponseBody = JSON.stringify({ message: "echo bob" });
+    assert.deepEqual(actualResponseBody, expectedResponseBody);
   });
 });
 
