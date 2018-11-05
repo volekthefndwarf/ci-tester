@@ -3,16 +3,17 @@ const express = require("express");
 const bodyParser = require("body-parser"); 
 const echoHandler = require("./api/echo").echo; 
 
-function logErrors (err, req, res, next) {
-  console.error(err.stack)
-  next(err)
+function errorHandler (err, req, res, next) {
+    res.status(500)
+    res.render('error', { error: err });
+   console.error(err.stack)
 }
 
 let server = new cloud.HttpServer("echo-app", () => {
     const app = express();
 
     app.use(bodyParser.json());
-    app.use(logErrors);
+    app.use(errorHandler);
   
 
     // Serve all files in the 'www' folder under '/'
