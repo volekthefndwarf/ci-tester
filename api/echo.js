@@ -1,5 +1,5 @@
 function echo(req, res) {
-   if(!req && !req.query['message']) {
+   if(req && !req.query['message']) {
       res.status(500).json({ error: "Missing 'message' to echo in query string"});
       return;
    }

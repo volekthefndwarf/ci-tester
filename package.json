@@ -4,7 +4,8 @@
   "description": "NodeJS with CI and CD cloud deploy to AWS",
   "main": "index.js",
   "directories": {
-    "test": "test"
+    "test": "./test",
+    "www": "./www"
   },
   "dependencies": {
     "@pulumi/cloud": "dev",
